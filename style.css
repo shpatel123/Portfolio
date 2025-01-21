@@ -82,9 +82,11 @@ body{
 body,
 html {
   scroll-behavior: smooth;
+   overflow-x: hidden;
 }
 section {
-  scroll-margin-top: 70px; /* Adjust according to the height of the nav */
+  scroll-margin-top: 70px;
+  margin: 0 auto;/* Adjust according to the height of the nav */
 }
 .hero {
   height: 100vh;
