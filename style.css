@@ -310,10 +310,8 @@ h4 {
 @media (max-width: 480px) {
   .content {
     position: absolute;
-    left: 76%;
-    padding: 20px;
     margin-top: 20px;
-    top: 53vh;
+    top: 76vh;
   }
   .content h1 {
     font-size: 1.8rem;
@@ -345,7 +343,7 @@ h4 {
     width: 60vw;
     height: 56vw;
     position: relative;
-    top: 33vh;
+    top: 28vh;
   }
 
   .homeimage img {
