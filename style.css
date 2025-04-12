@@ -82,9 +82,11 @@ body{
 body,
 html {
   scroll-behavior: smooth;
+   overflow-x: hidden;
 }
 section {
-  scroll-margin-top: 70px; /* Adjust according to the height of the nav */
+  scroll-margin-top: 70px;
+  margin: 0 auto;/* Adjust according to the height of the nav */
 }
 .hero {
   height: 100vh;
@@ -106,11 +108,7 @@ nav {
   border-bottom: 1px solid rgb(11, 46, 224);
 }
 .logo {
-  color: white;
-  font-size: 35px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  margin-left: 6vh;
+  padding: 40px;
 }
 .sp {
   color: #f9004d;
@@ -308,9 +306,8 @@ h4 {
 @media (max-width: 480px) {
   .content {
     position: absolute;
-    left: 76%;
-    padding: 20px;
     margin-top: 20px;
+    top: 76vh;
   }
   .content h1 {
     font-size: 1.8rem;
@@ -342,7 +339,7 @@ h4 {
     width: 60vw;
     height: 56vw;
     position: relative;
-    top: 33vh;
+    top: 28vh;
   }
 
   .homeimage img {
@@ -498,6 +495,10 @@ h4 {
 
 /* Media Query for Mobile */
 @media (max-width: 480px) {
+    .about{
+    padding-top: 50px;
+    height: 93vh;
+  }
   .main {
     flex-direction: column;
     align-items: center;
@@ -510,7 +511,7 @@ h4 {
   }
 
   .main .about-img .img-item img {
-    width: 53vw;
+    width: 61vw;
   }
 
   .about-text h2 {
@@ -534,7 +535,6 @@ h4 {
 
 
 /* =========================== project section style ================================= */
-
 section.project {
   padding: 80px 0;
   text-align: center;
@@ -546,18 +546,19 @@ section.project h2 {
 }
 
 .project-container {
-  display: flex;
-  justify-content: center;
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
-  flex-wrap: wrap;
+  justify-items: center; 
 }
 
 .project-box {
   position: relative;
-  width: 300px;
+  width: 100%; 
+  max-width: 400px; 
   height: 300px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
 }
@@ -1380,4 +1381,3 @@ p a:hover {
     font-size: 14px;
   }
 }
-
