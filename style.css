@@ -107,9 +107,6 @@ nav {
   height: 100px;
   border-bottom: 1px solid rgb(11, 46, 224);
 }
-.logo {
-  padding: 40px;
-}
 .sp {
   color: #f9004d;
 }
@@ -651,14 +648,20 @@ section.project h2 {
 
 /* Media Query for Mobile (480px and below) */
 @media (max-width: 480px) {
+  .project-container {
+    display: grid; 
+    grid-template-columns: repeat(1, 1fr); 
+    gap: 20px;
+    justify-items: center; 
+  }
   section.project h2 {
     font-size: 1.8rem;
     margin-bottom: 50px;
   }
 
   .project-box {
-    width: 100%; /* Full width for smaller screens */
-    max-width: 90%; /* Ensures some margin */
+    width: 100%; 
+    max-width: 90%; 
     height: 200px;
     position: relative; /* Ensure position context for the child */
   }
