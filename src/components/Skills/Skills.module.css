@@ -1,0 +1,108 @@
+.skills_wrapper{
+    width: 100%;
+    background-color: #000;
+}
+
+.subTitle{
+    text-align: center;
+    color: white;
+    font-size: 70px;
+}
+
+.skillContainer{
+    width: 85vw;
+    padding: 50px 60px;
+    margin: 0 auto;
+}
+
+.sk {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px;
+  margin-top: 3em;
+  gap: 15px;
+}
+
+.skil{
+    width: 48%;
+    margin-bottom: 30px;
+}
+
+.skillName{
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skillName span{
+    color: white;
+}
+
+.skillName .percen{
+    color: rgb(116, 11, 253);
+}
+
+.progressBar {
+  background-color: #333;
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #0400ff;
+  border-radius: 10px;
+  width: 0;
+  animation: loadProgress 1.5s ease-in-out 1s forwards;
+}
+
+/* Keyframes for smooth loading animation */
+@keyframes loadProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--width);
+  }
+}
+
+@media (max-width: 784px) {
+    .skillContainer{
+        padding: 30px;
+        width: 90vw;
+    }
+    .skil{
+        width: 100%; /*each skill takes fulll width*/
+    }
+    .progressBar{
+        height: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+  .skillContainer {
+    padding: 20px;
+    width: 95vw;
+  }
+
+  .subTitle {
+    font-size: 24px; /* Smaller font for title */
+  }
+
+  .skil {
+    width: 100%; /* Stacked layout */
+    margin-bottom: 20px;
+  }
+
+  .skillName {
+    font-size: 14px; /* Reduce font size for skill labels */
+  }
+
+  .progressBar {
+    height: 6px; /* Smaller height for mobile screens */
+  }
+}
+

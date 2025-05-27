@@ -1,0 +1,44 @@
+.end {
+  background-color: #191919;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.end p {
+  color: #f9004d;
+  font-size: 16px;
+}
+
+.end p a {
+  color: #f9004d;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+p a:hover {
+  color: white;
+}
+
+@media (max-width: 784px) {
+    .end{
+        flex-direction: column;
+        text-align: center;
+    }
+    .end p{
+        margin: 10px 0;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .end{
+        text-align: center;
+    }
+    .end p{
+        font-size: 14px;
+    }
+    
+}
