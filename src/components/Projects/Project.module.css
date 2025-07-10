@@ -74,7 +74,7 @@
   margin-bottom: 20px;
 }
 
-.projectLayer a {
+.projectLayer .detailsBtn {
   font-size: 1.5rem;
   color: #00aaff;
   text-decoration: none;
@@ -84,9 +84,159 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.projectLayer a:hover {
+.projectLayer .detailsBtn:hover {
   background-color: #00aaff;
   color: white;
+}
+
+/* --- Modal Styles (Updated) --- */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px); 
+}
+
+.modalContent {
+  background: #ffffff; 
+  padding: 2.5rem; 
+  border-radius: 12px; 
+  width: 95%; 
+  max-width: 650px; 
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); 
+  animation: fadeInScale 0.3s ease-out forwards; 
+  color: #333; 
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modalContent img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; 
+  margin-bottom: 1.5rem; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.modalContent h2 {
+  font-size: 2.5rem; 
+  margin-bottom: 1rem; 
+  color: #2c3e50;
+  text-align: center; 
+  font-weight: 700; 
+}
+
+.modalContent strong {
+  color: #555; 
+  display: block; 
+  margin-bottom: 0.5rem; 
+  font-size: 1.1em; 
+}
+
+.modalContent a {
+  display: inline-block; 
+  margin-top: 1.5rem; 
+  padding: 0.8rem 1.5rem; 
+  background-color: #007bff; 
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+  font-weight: 600;
+  margin: 10px;
+}
+
+.modalContent a:hover {
+  background-color: #0056b3; 
+  transform: translateY(-2px);
+}
+
+.techWrapper,
+.descriptionWrapper {
+  margin-top: 1.5rem; 
+  text-align: left;
+}
+
+.techList,
+.descriptionList {
+  padding-left: 1.8rem; 
+  margin-top: 0.5rem;
+  line-height: 1.6; 
+}
+
+.techList li,
+.descriptionList li {
+    list-style-type: disc;
+  margin-bottom: 0.6rem; 
+  font-size: 1.05rem; 
+  color: #444; 
+}
+
+
+.closeBtn {
+  margin-top: 2rem; 
+  background: #dc3545; 
+  color: white;
+  padding: 0.8rem 1.8rem; 
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: #c82333; 
+  transform: translateY(-2px);
+}
+
+.detailsBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem; 
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.detailsBtn:hover {
+  color: #007bff; 
+  transform: scale(1.1); 
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 1.5rem;
+  }
+  .modalContent h2 {
+    font-size: 2rem;
+  }
+  .modalContent a,
+  .closeBtn {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 784px) {

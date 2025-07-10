@@ -27,7 +27,7 @@ function Education() {
               </div>
               <div className={eduCSS.details}>
                 <h3>
-                  Python Development Intern Intern <span>(Jan 25 - May 25 )</span>
+                  Python Development Intern <span>(Jan 25 - May 25 )</span>
                 </h3>
                 <h4>TSS Consultancy Pvt Ltd </h4>
                 <p>
@@ -56,12 +56,11 @@ function Education() {
               </div>
               <div className={eduCSS.details}>
                 <h3>
-                  Full Stack Development <span>(Sep 23 – Oct-23)</span>
+                  Full Stack Development <span>(May 26 - June-24)</span>
                 </h3>
-                <h4>OpenWeaver</h4>
+                <h4>Brainybeam Info-Tech PVT LTD</h4>
                 <p>
-                  This was my first internship, where I gained hands-on
-                  development experience.
+                   I have successfully completed a 30-day internship in the MERN Stack at BrainyBeam Technologies Pvt. Ltd.
                 </p>
               </div>
             </div>

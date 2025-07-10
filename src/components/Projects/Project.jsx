@@ -1,91 +1,88 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import projectCSS from "./Project.module.css";
-import pro1 from "./../../assets/pro1.jpg";
-import pro2 from "./../../assets/pro2.avif";
-import pro3 from "./../../assets/pro3.jpg";
-import travel from "./../../assets/travel.jpg";
-import news from "./../../assets/news.png";
-import disease from "./../../assets/disease.jpg";
-import { animateProjects } from "./../../animations"; // Adjust path as needed
+import projectData from "./../Projects/Data"; // central data
+import { animateProjects } from "./../../animations";
 
 function Project() {
   const projectRef = useRef(null);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     animateProjects(projectRef);
   }, []);
 
   return (
-    <div className={`${projectCSS.project_wrapper} section`} id="projects" ref={projectRef}>
-      <h2>Latest <span>Project</span></h2>
+    <div
+      className={`${projectCSS.project_wrapper} section`}
+      id="projects"
+      ref={projectRef}
+    >
+      <h2>
+        Latest <span>Project</span>
+      </h2>
 
       <div className={projectCSS.projectContainer}>
-        <div className={projectCSS.projectBox}>
-          <img src={pro1} alt="weather app" />
-          <div className={projectCSS.projectLayer}>
-            <h4>Weather App</h4>
-            <p>I built a weather app using web technologies.</p>
-            <a href="https://github.com/shpatel123/Weather-App" target="_blank" rel="noopener noreferrer">
-              <i className='bx bx-link-external'></i>
-            </a>
+        {projectData.map((proj) => (
+          <div className={projectCSS.projectBox} key={proj.id}>
+            <img src={proj.image} alt={proj.title} />
+            <div className={projectCSS.projectLayer}>
+              <h4>{proj.title}</h4>
+              <button
+                onClick={() => setSelectedProject(proj)}
+                className={projectCSS.detailsBtn}
+              >
+                <i className="bx bx-link-external"></i>
+              </button>
+            </div>
           </div>
-        </div>
-
-        <div className={projectCSS.projectBox}>
-          <img src={pro2} alt="employee dashboard" />
-          <div className={projectCSS.projectLayer}>
-            <h4>Employee Management System</h4>
-            <p>I built an employee system using Java Swing.</p>
-            <a href="https://github.com/shpatel123/Employee-Mnagement-System" target="_blank" rel="noopener noreferrer">
-              <i className='bx bx-link-external'></i>
-            </a>
-          </div>
-        </div>
-
-        <div className={projectCSS.projectBox}>
-          <img src={pro3} alt="spotify clone" />
-          <div className={projectCSS.projectLayer}>
-            <h4>Spotify Clone</h4>
-            <p>I built a Spotify clone using web technologies.</p>
-            <a href="https://github.com/shpatel123/Spotify-clone" target="_blank" rel="noopener noreferrer">
-              <i className='bx bx-link-external'></i>
-            </a>
-          </div>
-        </div>
-
-        <div className={projectCSS.projectBox}>
-          <img src={travel} alt="travel website" />
-          <div className={projectCSS.projectLayer}>
-            <h4>Wanderlust Travel Website</h4>
-            <p>Developed a full-stack travel website.</p>
-            <a href="https://github.com/shpatel123/Wanderlust-Website" target="_blank" rel="noopener noreferrer">
-              <i className='bx bx-link-external'></i>
-            </a>
-          </div>
-        </div>
-
-        <div className={projectCSS.projectBox}>
-          <img src={news} alt="news app" />
-          <div className={projectCSS.projectLayer}>
-            <h4>News App</h4>
-            <p>I created a news app using React.</p>
-            <a href="https://github.com/shpatel123/newsapp" target="_blank" rel="noopener noreferrer">
-              <i className='bx bx-link-external'></i>
-            </a>
-          </div>
-        </div>
-
-        <div className={projectCSS.projectBox}>
-          <img src={disease} alt="disease prediction" />
-          <div className={projectCSS.projectLayer}>
-            <h4>Disease Prediction</h4>
-            <p>Built using machine learning and a Flask application.</p>
-            <a href="https://github.com/shpatel123/newsapp" target="_blank" rel="noopener noreferrer">
-              <i className='bx bx-link-external'></i>
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
+
+      {/* Modal */}
+      {selectedProject && (
+        <div
+          className={projectCSS.modalOverlay}
+          onClick={() => setSelectedProject(null)}
+        >
+          <div
+            className={projectCSS.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2>{selectedProject.title}</h2>
+            <img src={selectedProject.modalImage || selectedProject.image} alt={selectedProject.title} />
+            <div className={projectCSS.descriptionWrapper}>
+              <strong>Description:</strong>
+              <ul className={projectCSS.descriptionList}>
+                {selectedProject.description.map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
+              </ul>
+            </div>
+            <div className={projectCSS.techWrapper}>
+              <strong>Technologies:</strong>
+              <ul className={projectCSS.techList}>
+                {selectedProject.technologies.map((tech, index) => (
+                  <li key={index}>{tech}</li>
+                ))}
+              </ul>
+            </div>
+
+            <a
+              href={selectedProject.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View GitHub Repo
+            </a>
+            <button
+              onClick={() => setSelectedProject(null)}
+              className={projectCSS.closeBtn}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

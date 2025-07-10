@@ -72,6 +72,7 @@
   transition: background 0.3s ease, border 0.3s ease;
 }
 
+
 .contact_wrapper .right form .field input::placeholder,
 .contact_wrapper .right form .textarea textarea::placeholder {
   color: rgba(255, 255, 255, 0.7); /* Semi-transparent placeholder text */
@@ -103,6 +104,14 @@
   border: 2px solid #f9004d;
   cursor: pointer;
 }
+
+
+.errorText {
+  color: red;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
 
 @media (max-width: 784px) {
   .contact_content {
