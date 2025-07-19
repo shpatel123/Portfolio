@@ -23,7 +23,7 @@ const projectData = [
     technologies: ["HTML", "CSS", "JavaScript", "API"],
     image: pro1,
     modalImage: weather,
-    link: "https://github.com/shpatel123/Weather-App",
+    link: "https://shpatel123.github.io/Weather-App/",
   },
   {
     id: "food-order",
@@ -37,7 +37,7 @@ const projectData = [
     ],
     technologies: ["React.js", "Node.js","Express.js", "Tailwind CSS", "MongoDB","Razorpay"],
     image: pro2,
-    link: "https://github.com/shpatel123/Employee-Mnagement-System",
+    link: "https://grocery-website-frontend-h5p9.onrender.com/",
   },
   {
     id: "Password Manager",
@@ -79,7 +79,7 @@ const projectData = [
     technologies: ["React", "Bootstrap", "API"],
     image: news,
     modalImage: newapp,
-    link: "https://github.com/shpatel123/newsapp",
+    link: "https://shpatel123.github.io/Newsapp",
   },
   {
     id: "disease-predictor",
