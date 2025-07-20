@@ -31,11 +31,11 @@ const projectData = [
     description: [
       "Built E-commerce food order website.",
       "In this website i create product and seller webpage.",
-      "Authentication for both admin and user and i also use cookie and session. ",
+      "Authentication for both admin and user use jwt token, cookies and session.",
       "Uses MongoDB for data storage.",
       "User also can add product to cart and checkout then payment."
     ],
-    technologies: ["React.js", "Node.js","Express.js", "Tailwind CSS", "MongoDB","Razorpay"],
+    technologies: ["React.js", "Node.js","Express.js", "Tailwind CSS", "MongoDB", "Cloud service"],
     image: pro2,
     link: "https://grocery-website-frontend-h5p9.onrender.com/",
   },
