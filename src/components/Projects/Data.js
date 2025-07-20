@@ -1,6 +1,6 @@
 // projectData.js
 import pro1 from "./../../assets/pro1.jpg";
-import pro2 from "./../../assets/pro2.avif";
+import pro2 from "./../../assets/pro2.png";
 import pro3 from "./../../assets/pro3.jpg";
 import travel from "./../../assets/travel.jpg";
 import news from "./../../assets/news.png";
