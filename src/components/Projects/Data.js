@@ -1,6 +1,6 @@
 // projectData.js
 import pro1 from "./../../assets/pro1.jpg";
-import pro2 from "./../../assets/pro2.png";
+import pro2 from "./../../assets/pro2.jpg";
 import pro3 from "./../../assets/pro3.jpg";
 import travel from "./../../assets/travel.jpg";
 import news from "./../../assets/news.png";
@@ -9,6 +9,7 @@ import newapp from "./../../assets/newsapp.png";
 import passop from "./../../assets/passop.png";
 import weather from "./../../assets/weather.png";
 import travels from "./../../assets/wanderlust.png";
+import ecommerce from "./../../assets/ecommerce.png";
 
 const projectData = [
   {
@@ -37,6 +38,7 @@ const projectData = [
     ],
     technologies: ["React.js", "Node.js","Express.js", "Tailwind CSS", "MongoDB", "Cloud service"],
     image: pro2,
+    modalImage: ecommerce,
     link: "https://grocery-website-frontend-h5p9.onrender.com/",
   },
   {
